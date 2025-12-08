@@ -1,0 +1,42 @@
+/* style.css - Simplified for the project MVP */
+:root {
+    --primary-color: #2a6496;
+    --secondary-color: #5cb85c;
+    --bg-color: #f7f7f7;
+}
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); }
+#app-container { display: flex; flex-direction: column; min-height: 100vh; }
+#app-header { background-color: var(--primary-color); color: white; padding: 20px; display: flex; align-items: center; gap: 10px; }
+#login-container { max-width: 400px; margin: 100px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+#login-form input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+
+/* Main App Layout */
+.hidden { display: none !important; }
+#main-app { display: flex; flex: 1; }
+#sidebar-menu { width: 250px; background-color: #333; color: white; padding: 20px 0; }
+#sidebar-menu a, #sidebar-menu button { display: block; color: white; padding: 15px 20px; text-decoration: none; border: none; background: none; width: 100%; text-align: left; cursor: pointer; }
+#sidebar-menu a:hover, #sidebar-menu button:hover { background-color: #575757; }
+#main-content-area { flex-grow: 1; padding: 20px; }
+
+/* Common Styles */
+button { background-color: var(--primary-color); color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+button:hover { opacity: 0.9; }
+.feedback-message { margin-top: 10px; padding: 10px; border-radius: 4px; }
+.success { background-color: #d4edda; color: #155724; }
+.error { background-color: #f8d7da; color: #721c24; }
+
+/* Table Styles */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background-color: #e9ecef; font-weight: bold; }
+
+/* Form Styles */
+label { display: block; margin-top: 10px; font-weight: bold; }
+input:not([type="submit"]), select, textarea { 
+    width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 5px; 
+    border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+}
+.filter-btn { cursor: pointer; padding: 8px 12px; margin-right: 5px; border: 1px solid #ccc; border-radius: 4px; display: inline-block; }
+.filter-btn.active { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
+.sales-lead { color: #f0ad4e; font-weight: bold; }
+.support { color: #5bc0de; font-weight: bold; }
