@@ -10,12 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(html => {
                 document.getElementById('main-content-area').innerHTML = html;
+                // Add event listeners for dynamic content after it loads (e.g., users for new contact form)
+                if (endpoint.includes('new_contact.php')) {
+                     loadAssignedUsers();
+                }
             })
             .catch(error => {
                 console.error('Error loading content:', error);
                 document.getElementById('main-content-area').innerHTML = `<h2 class="error">Error loading content.</h2>`;
             });
     }
+    
+    /** Fetches and populates the Assigned To dropdown on the New Contact form. */
+    function loadAssignedUsers() {
+        fetch('api/get_users_list.php') // This API needs to be created to return a JSON list of users
+            .then(response => response.json())
+            .then(users => {
+                const select = document.getElementById('assigned-to');
+                if (select) {
+                    select.innerHTML = '<option value="">Select User</option>'; // Clear and add default
+                    users.forEach(user => {
+                        const option = document.createElement('option');
+                        option.value = user.id;
+                        option.textContent = user.name;
+                        select.appendChild(option);
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading users for dropdown:', error));
+    }
+
 
     /** Loads the sidebar and main app layout after successful login. */
     function loadMainLayout(role) {
@@ -69,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (page === 'dashboard') loadContent('content/dashboard.php?filter=all');
             else if (page === 'new_contact') loadContent('content/new_contact.php');
             else if (page === 'view_users') loadContent('content/view_users.php');
+            else if (page === 'new_user') loadContent('content/new_user.php');
         }
         
         // Dashboard Filters

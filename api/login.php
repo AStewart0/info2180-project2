@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 $pdo = connectDB();
 
 $email = sanitize($_POST['email']);
-$password = $_POST['password']; // Password is used for comparison, not stored
+$password = $_POST['password'];
 
 if (empty($email) || empty($password)) {
     echo json_encode(['success' => false, 'message' => 'Email and password are required.']);
@@ -29,6 +29,6 @@ try {
     }
 } catch (Exception $e) {
     error_log("Login error: " . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'An error occurred during login.']);
+    echo json_encode(['success' => false, 'message' => 'An unexpected error occurred during login.']);
 }
 ?>

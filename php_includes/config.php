@@ -7,14 +7,14 @@ if (session_status() == PHP_SESSION_NONE) {
 // Database Connection Details - IMPORTANT: UPDATE THESE
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'dolphin_crm');
-define('DB_USER', 'lab5_user'); 
+define('DB_USER', 'root'); 
 define('DB_PASS', 'password123'); 
 
 // Function to establish PDO connection
 function connectDB() {
     try {
         $pdo = new PDO(
-            "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
+            "mysql:host=" . DB_HOST . ";port=3307;dbname=" . DB_NAME . ";charset=utf8mb4",
             DB_USER,
             DB_PASS,
             [

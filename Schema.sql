@@ -44,6 +44,6 @@ CREATE TABLE Notes (
     FOREIGN KEY (created_by) REFERENCES Users(id) ON DELETE RESTRICT
 );
 
--- Initial Administrator User (Update the hash placeholder)
+-- Initial Administrator User 
 INSERT INTO Users (firstname, lastname, password, email, role, created_at) VALUES
-('Admin', 'User', '$2y$10$m5R6AZIbQ.08d631qE7wkuJxOh/WOBjOHxKrLwiZG04QbyZgoOBA6', 'admin@project2.com', 'Admin', NOW());
+('Admin', 'User', '$2y$10$m5R6AZIbQ.08d631qE7wkuJxOh/WOBjOHxKrLwiZG04QbyZgoOBA6', 'admin@project2.com', 'Admin', NOW()); 
