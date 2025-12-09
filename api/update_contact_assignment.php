@@ -8,7 +8,6 @@ if (!isLoggedIn()) {
     exit;
 }
 
-// Data is sent as JSON for this action
 $data = json_decode(file_get_contents('php://input'), true);
 $contact_id = (int)($data['contact_id'] ?? 0);
 $assigned_to_id = $_SESSION['user_id'];

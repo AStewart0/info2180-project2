@@ -1,12 +1,12 @@
 /* style.css */
 
 :root {
-    --header-bg: #222d3c; /* Dark blue/black for header */
-    --primary-color: #556ee6; /* Blue for buttons and links */
-    --secondary-bg: #ffffff; /* White card background */
-    --bg-color: #f8f8fb; /* Light grey background for the app */
-    --text-color: #495057; /* Dark text */
-    --sidebar-bg: #343a40; /* Dark sidebar */
+    --header-bg: #222d3c; 
+    --primary-color: #556ee6; 
+    --secondary-bg: #ffffff; 
+    --bg-color: #f8f8fb; 
+    --text-color: #495057; 
+    --sidebar-bg: #343a40; 
 }
 
 /* --- BASE & LAYOUT --- */
@@ -88,7 +88,7 @@ a:hover {
 /* --- MAIN APP LAYOUT (Sidebar + Content) --- */
 #main-app { 
     display: flex; 
-    min-height: calc(100vh - 60px); /* Adjust based on header height */
+    min-height: calc(100vh - 60px); 
 }
 
 /* Sidebar Menu */
@@ -190,7 +190,7 @@ table {
     margin-top: 20px; 
     background: var(--secondary-bg);
     border-radius: 8px;
-    overflow: hidden; /* Ensures border-radius is applied */
+    overflow: hidden; 
 }
 th, td { 
     padding: 15px; 

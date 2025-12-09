@@ -8,7 +8,6 @@ if (!isLoggedIn()) {
     exit;
 }
 
-// Data is sent as JSON for this action
 $data = json_decode(file_get_contents('php://input'), true);
 $contact_id = (int)($data['contact_id'] ?? 0);
 $current_type = $data['current_type'] ?? '';
@@ -19,7 +18,6 @@ if (empty($contact_id)) {
     exit;
 }
 
-// Determine the new type
 $new_type = ($current_type === 'Sales Lead') ? 'Support' : 'Sales Lead';
 
 $pdo = connectDB();

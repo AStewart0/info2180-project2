@@ -16,7 +16,7 @@ $email = sanitize($_POST['email']);
 $password = $_POST['password']; 
 $role = sanitize($_POST['role']);
 
-// --- Password Validation (Required RegEx) ---
+// --- Password Validation ---
 // 1. At least 8 characters long
 // 2. Contains at least one letter (a-z)
 // 3. Contains at least one capital letter (A-Z)

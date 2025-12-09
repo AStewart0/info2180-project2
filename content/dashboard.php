@@ -1,5 +1,4 @@
 <?php
-// File: content/dashboard.php
 
 require_once('../php_includes/config.php');
 
@@ -52,7 +51,6 @@ try {
     exit;
 }
 
-// ⬇️ LINE 33 STARTS HERE (The error was likely here if the closing tag above was missing) ⬇️
 ?>
 
 <div class="dashboard-header" style="display: flex; justify-content: space-between; align-items: center;">

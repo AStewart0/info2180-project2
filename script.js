@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(html => {
                 document.getElementById('main-content-area').innerHTML = html;
-                // Add event listeners for dynamic content after it loads (e.g., users for new contact form)
                 if (endpoint.includes('new_contact.php')) {
                      loadAssignedUsers();
                 }
@@ -23,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     /** Fetches and populates the Assigned To dropdown on the New Contact form. */
     function loadAssignedUsers() {
-        fetch('api/get_users_list.php') // This API needs to be created to return a JSON list of users
+        fetch('api/get_users_list.php') 
             .then(response => response.json())
             .then(users => {
                 const select = document.getElementById('assigned-to');
                 if (select) {
-                    select.innerHTML = '<option value="">Select User</option>'; // Clear and add default
+                    select.innerHTML = '<option value="">Select User</option>'; 
                     users.forEach(user => {
                         const option = document.createElement('option');
                         option.value = user.id;
@@ -85,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Global Click Handler (Navigation, Filters, View Contact, Contact Actions)
     document.addEventListener('click', function(e) {
-        // Navigation (Sidebar/Buttons)
         const navTarget = e.target.closest('a[data-target], button[data-target]');
         if (navTarget) {
             e.preventDefault();
@@ -139,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (data.success) {
                         feedback.className = 'feedback-message success';
                         feedback.textContent = data.message;
-                        // Reload the current contact details page to reflect changes
                         loadContent(`content/contact_details.php?id=${contactId}`);
                     } else {
                         feedback.className = 'feedback-message error';
@@ -173,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.target.reset();
                     
                     if (formId === 'add-note-form') {
-                        // After adding a note, reload the details view to refresh notes list
                         const contactId = formData.get('contact_id');
                         loadContent(`content/contact_details.php?id=${contactId}`);
                     }

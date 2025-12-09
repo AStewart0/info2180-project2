@@ -17,7 +17,6 @@ try {
     $stmt = $pdo->query("SELECT id, firstname, lastname FROM Users ORDER BY firstname");
     $users = $stmt->fetchAll();
 
-    // Format the list for the JavaScript dropdown
     $user_list = array_map(function($user) {
         return ['id' => $user['id'], 'name' => $user['firstname'] . ' ' . $user['lastname']];
     }, $users);

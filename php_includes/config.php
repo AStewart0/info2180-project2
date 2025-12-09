@@ -1,16 +1,14 @@
 <?php
-// Start a secure session for all PHP files that require user context
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Database Connection Details - IMPORTANT: UPDATE THESE
+// Database Connection Details 
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'dolphin_crm');
 define('DB_USER', 'root'); 
 define('DB_PASS', 'password123'); 
 
-// Function to establish PDO connection
 function connectDB() {
     try {
         $pdo = new PDO(
@@ -32,7 +30,6 @@ function connectDB() {
     }
 }
 
-// Helper functions for security and access control
 function isAdmin() {
     return isset($_SESSION['role']) && $_SESSION['role'] === 'Admin';
 }
@@ -40,7 +37,6 @@ function isLoggedIn() {
     return isset($_SESSION['user_id']);
 }
 function sanitize($input) {
-    // Basic sanitization: strip whitespace and HTML special chars
     return htmlspecialchars(trim($input ?? ''), ENT_QUOTES, 'UTF-8');
 }
 ?>

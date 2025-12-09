@@ -2,7 +2,7 @@
 // File: content/view_users.php
 require_once('../php_includes/config.php');
 
-// Only Admin should be able to view this list [cite: 63]
+// Only Admin should be able to view this list 
 if (!isLoggedIn() || !isAdmin()) {
     echo "<h2>Access Denied</h2><p>You must be an administrator to view this page.</p>";
     exit;

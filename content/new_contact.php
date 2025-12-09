@@ -2,7 +2,6 @@
 // File: content/new_contact.php
 require_once('../php_includes/config.php');
 if (!isLoggedIn()) { header('Location: ../index.html'); exit; }
-// JS calls api/get_users_list.php to populate 'assigned-to' dropdown. [cite: 149]
 ?>
 
 <h2>New Contact</h2>

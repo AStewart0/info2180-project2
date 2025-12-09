@@ -10,7 +10,7 @@ if ($contact_id === 0) {
     exit;
 }
 
-// 1. Fetch Contact Details, including creator and assigned user names [cite: 178]
+// 1. Fetch Contact Details, including creator and assigned user names 
 $sql_contact = "
     SELECT 
         c.*, 
@@ -30,7 +30,7 @@ if (!$contact) {
     exit;
 }
 
-// 2. Fetch Notes [cite: 182]
+// 2. Fetch Notes 
 $sql_notes = "
     SELECT n.comment, n.created_at, u.firstname, u.lastname
     FROM Notes n
