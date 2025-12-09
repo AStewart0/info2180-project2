@@ -34,8 +34,7 @@ if (!isLoggedIn()) { header('Location: ../index.html'); exit; }
         <label for="type">Type</label>
         <select id="type" name="type" required>
             <option value="Sales Lead">Sales Lead</option>
-            <option value="Support">Support</option> [cite: 149]
-        </select>
+            <option value="Support">Support</option>         </select>
         
         <label for="assigned-to">Assigned To</label>
         <select id="assigned-to" name="assigned_to" required>
@@ -43,6 +42,5 @@ if (!isLoggedIn()) { header('Location: ../index.html'); exit; }
         </select>
         
         <button type="submit">Save</button>
-        <div id="new-contact-feedback" class="feedback-message"></div> [cite: 153]
-    </form>
+        <div id="new-contact-feedback" class="feedback-message"></div>     </form>
 </div>

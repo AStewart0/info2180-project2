@@ -88,15 +88,13 @@ $current_type_class = strtolower(str_replace(' ', '-', $contact['type']));
         </div>
         <div>
             <p><strong>Created On:</strong> <?= date('Y-m-d h:i A', strtotime($contact['created_at'])) ?></p>
-            [cite_start]<p><strong>Last Updated:</strong> <?= date('Y-m-d h:i A', strtotime($contact['updated_at'])) ?></p> [cite: 178]
-        </div>
+            <p><strong>Last Updated:</strong> <?= date('Y-m-d h:i A', strtotime($contact['updated_at'])) ?></p>         </div>
     </div>
     
     <hr>
 
     <div class="notes-section">
-        [cite_start]<h3>Notes</h3> [cite: 196]
-        
+        <h3>Notes</h3>         
         <div class="notes-list" style="max-height: 400px; overflow-y: auto;">
             <?php if (empty($notes)): ?>
                 <p>No notes have been added for this contact.</p>
@@ -107,8 +105,7 @@ $current_type_class = strtolower(str_replace(' ', '-', $contact['type']));
                         <p class="note-meta">
                             - <?= htmlspecialchars($note['firstname'] . ' ' . $note['lastname']) ?>
                             on <?= date('Y-m-d h:i A', strtotime($note['created_at'])) ?>
-                        [cite_start]</p> [cite: 183]
-                    </div>
+                        </p>                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>

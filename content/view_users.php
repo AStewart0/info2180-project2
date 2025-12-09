@@ -21,8 +21,7 @@ try {
 ?>
 <div class="users-header" style="display: flex; justify-content: space-between; align-items: center;">
     <h2>Users</h2>
-    [cite_start]<button data-target="new_user"><i class="fas fa-user-plus"></i> Add User</button> [cite: 98]
-</div>
+    <button data-target="new_user"><i class="fas fa-user-plus"></i> Add User</button> </div>
 
 <?php if (empty($users)): ?>
     <p>No users found in the system.</p>

@@ -21,15 +21,13 @@ if (!isLoggedIn() || !isAdmin()) {
         
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
-        <small>Password must be at least 8 chars, contain one letter, one capital letter, and one number. [cite: 37]</small>
+        <small>Password must be at least 8 chars, contain one letter, one capital letter, and one number. </small>
 
         <label for="role">Role</label>
         <select id="role" name="role" required>
             <option value="Member">Member</option>
-            <option value="Admin">Admin</option> [cite: 40]
-        </select>
+            <option value="Admin">Admin</option>         </select>
         
         <button type="submit">Save</button>
-        <div id="new-user-feedback" class="feedback-message"></div> [cite: 42]
-    </form>
+        <div id="new-user-feedback" class="feedback-message"></div>     </form>
 </div>
